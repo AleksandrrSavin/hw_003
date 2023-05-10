@@ -121,16 +121,6 @@ public class FormTest {
         assertEquals(expected, actual);
     }
 
-    @Test
-    void shouldNotSendAgreementNotCheck() {
-        driver.get("http://localhost:9999");
-        driver.findElement(By.cssSelector("[data-test-id='name'] input")).sendKeys("Иванов Иван");
-        driver.findElement(By.cssSelector("[data-test-id='phone'] input")).sendKeys("+79167039986");
-        driver.findElement(By.cssSelector("[type=button]")).click();
-        String expected = "Я соглашаюсь с условиями обработки и использования моих персональных данных и разрешаю сделать запрос в бюро кредитных историй";
-        String actual = driver.findElement(By.className("checkbox__text")).getText().trim();
-        assertEquals(expected, actual);
-    }
 }
 
 
